@@ -1,0 +1,460 @@
+# Word pairs for Links.
+#
+# Each line is   first: second second second ...
+# and means "first second" is a well-known phrase or compound word,
+# for example   peanut: butter   or   butter: cup fly milk
+#
+# Chains are built by following these pairs: peanut -> butter -> cup -> cake.
+# To remove a pair, delete the second word from its line. To add pairs, add
+# words to a line or add a new line. Then run:
+#     npm run pairs
+#     npm run puzzles
+#     npm test
+# Only plain single words. Duplicates are ignored.
+
+after: math noon shock taste thought life party glow
+air: port plane line craft bag mail tight force show time fare field brush lock strip wave way bed head ship space
+alarm: clock bell
+all: star night day time
+angel: fish food cake
+ant: hill eater
+any: time way body one where thing
+apple: pie sauce juice tree cider core seed cart jack
+arm: chair pit band rest hole
+army: base ant
+arrow: head
+art: work class show
+baby: sitter doll food shower face boy girl tooth powder blue steps bottle
+back: yard pack bone fire ground stage door seat stroke hand bite drop flip track up rest side lash log bend fill board stop room water
+bag: pipe
+bake: sale
+ball: park room game point player boy
+band: aid wagon stand leader
+bank: account note roll robber teller card book shot
+bar: stool bell code tender fly room
+barn: yard door owl dance
+base: ball line board camp
+basket: ball case
+bat: man cave
+bath: room tub robe water towel mat salt time house
+battle: ship field ground cry
+beach: ball house towel front chair party
+bean: bag stalk sprout pole
+bear: hug cub trap claw
+bed: room time side bug rock spread sheet post frame head
+bee: hive line keeper sting
+beef: steak cake
+bell: boy tower hop pepper
+belly: button flop dance laugh
+bench: mark press
+big: shot top foot time wig
+bill: board fold
+bird: house bath seed cage song call brain watch dog
+birth: day place mark right stone
+bit: coin
+black: board bird berry mail smith out list top jack hole belt eye box cat ice bear
+block: head party
+blood: hound shot line bath stream bank type test
+blow: fish torch hole out dry
+blue: bird berry print bell grass jay moon cheese whale jeans
+board: room walk game
+boat: house load yard race
+body: guard builder work language
+bone: yard head dry
+book: case shelf mark worm store keeper club end cover bag
+boot: camp strap lace leg
+bottle: neck cap opener
+bottom: line
+bow: tie string
+bowl: game
+box: car office spring cutter
+boy: friend band scout
+brain: storm wash wave power child freeze
+bread: crumb box stick basket winner board knife
+break: fast down through out up dance water neck
+brick: wall yard work layer
+bride: groom
+bridge: work
+brief: case
+broad: cast band way side sword
+broom: stick
+brush: fire off stroke
+bubble: gum bath wrap tea
+buck: wheat shot tooth skin
+bug: spray
+bull: dog frog dozer pen fight ring horn
+bus: stop boy driver
+bush: fire
+butter: cup fly milk scotch ball knife nut finger
+button: hole
+cake: pop walk pan mix
+call: back out
+camp: fire site ground
+can: opener
+candle: light stick wax
+candy: cane bar store apple corn floss
+cannon: ball
+car: pool port wash seat park door sick
+card: board game
+cart: wheel
+cash: back box flow cow
+cat: fish nap walk nip call food
+chain: saw link mail gang
+chair: man lift
+chalk: board
+check: book mark list out point mate up
+cheese: cake burger cloth board
+cherry: pie tree
+chess: board piece
+chest: nut
+chicken: pox coop wing soup
+child: hood care proof
+class: room mate
+clip: board
+clock: work tower wise face
+cloud: burst
+club: house
+coal: mine
+coat: rack hanger tail
+cob: web
+coffee: pot cup shop table break bean cake house mug
+cold: front snap cut war sore case
+come: back
+cook: book out
+copy: cat right
+corn: bread field starch cob flake meal dog
+corner: stone
+cotton: candy ball wool seed tail
+count: down
+country: side club
+court: yard room house ship
+cow: boy girl bell hide
+crab: cake apple grass walk
+cross: word walk road bow fire wind bar
+crow: bar
+cup: cake board holder
+cut: back off throat out
+dance: floor hall
+dark: room horse
+dash: board
+data: base
+day: light dream time break care bed
+dead: line lock end bolt
+death: bed
+desk: top
+dinner: time table bell party
+dirt: bike road
+dish: washer cloth pan water
+dog: house wood fight food tag sled fish
+doll: house
+door: bell knob mat step way stop man frame
+double: cross check decker
+down: town hill pour fall load stairs stream time
+dragon: fly fruit
+drain: pipe
+draw: bridge back string
+dream: land boat
+drift: wood
+drive: way
+drop: out kick
+drum: stick roll beat
+duck: bill tail pond
+dust: pan bin storm
+ear: ring drum plug wax ache lobe shot phone mark
+earth: quake worm
+egg: shell plant head roll cup white yolk
+eye: ball brow lid lash sight sore glass shadow drop witness
+face: book lift mask paint
+fair: way ground
+fall: out back
+farm: house yard land hand
+feed: back
+field: trip day work goal mouse
+finger: print nail tip paint
+fire: truck fly place work man wood ball side arm proof fighter drill alarm escape station engine hose pit cracker light storm power
+fish: bowl hook net tank pond cake stick
+flag: pole ship stone
+flash: light back card flood point
+flat: bed top
+flip: flop side
+flood: light gate
+floor: board
+flower: pot bed
+fog: horn
+food: truck court chain
+foot: ball print step path note hill wear stool rest bridge
+fore: head cast arm ground hand
+fork: lift
+fox: hole tail
+free: way hand fall
+friend: ship
+frog: man
+front: line door page yard
+fruit: cake fly bowl salad
+full: back moon time
+game: show play
+gate: way keeper
+gear: box
+ginger: bread snap
+girl: friend
+glass: house ware
+goal: post keeper
+gold: fish mine smith star
+golf: ball club course cart
+grand: father mother child son stand
+grape: fruit vine
+grass: hopper land
+grave: yard stone
+green: house back
+ground: hog work
+guard: rail house dog
+guess: work
+guest: room house book list
+guide: book line dog
+gum: drop ball
+gun: powder shot fire fight
+hail: stone storm
+hair: cut brush pin line spray dryer band
+half: time way back moon
+hall: way mark
+hand: bag shake book ball made rail cuff writing stand
+hat: box pin
+head: line band phone light ache quarters rest board stone
+heart: beat break burn ache land
+high: way light chair school land
+hill: side top
+home: work town sick made land run page room
+honey: moon bee comb dew pot
+horse: back shoe power fly play race
+hot: dog pot shot head rod bed line cake
+hour: glass hand
+house: boat work wife hold fly plant keeper cat
+ice: cream cube box cap skate breaker pop storm
+iron: man
+jack: pot knife rabbit
+jail: bird break
+jaw: bone drop
+jelly: fish bean roll
+junk: yard mail food
+key: board hole note chain stone ring pad
+kick: off back stand ball
+king: fish pin
+kitchen: sink table
+knee: cap
+knife: point
+knock: out off
+lady: bug bird
+lake: side
+lamp: post shade
+land: mark lord slide lady fill
+lap: top dog
+life: time boat guard style line jacket long
+light: house weight bulb year
+lime: stone light
+line: man up dance
+lip: stick
+living: room
+lock: smith down out box
+log: book cabin
+long: shot bow hand
+loop: hole
+love: bird seat letter song
+low: land
+lunch: box time break room bag
+mail: box man bag truck
+main: land stream stay
+man: hole kind power
+mark: down up
+master: piece mind
+match: box stick book maker
+meal: time
+meat: ball loaf pie
+mid: night way day
+mile: stone
+milk: shake man maid truck
+mind: set
+moon: light walk beam shine stone shot
+mother: land ship
+motor: cycle boat way bike pool
+mountain: top bike side
+mouse: trap pad hole
+mouth: wash piece
+movie: star
+mud: slide pie
+mug: shot
+music: box hall
+nail: brush file
+name: tag drop
+neck: lace tie line
+net: work
+news: paper stand room cast letter
+night: fall mare club gown time light shift stick watch
+north: star
+nose: bleed dive ring
+note: book pad paper
+nut: shell cracker case
+oat: meal cake
+off: side shore spring hand
+oil: can
+out: side line door come law fit look back box
+over: time coat load look all night land hand
+pan: cake
+paper: back work clip weight boy cut cup bag
+park: land
+pass: port word
+patch: work
+path: way
+pay: back day check cut roll
+pea: nut shot
+peanut: butter
+pen: knife pal
+pepper: mint corn pot
+phone: book case call
+pie: crust chart
+pig: pen tail
+pillow: case fight
+pin: ball point hole wheel cushion head
+pine: apple cone
+pipe: line
+pit: stop fall
+pizza: box pie
+play: ground time mate house pen room book off back
+pocket: book knife watch
+point: blank
+pony: tail
+pool: side table party
+pop: corn star
+port: hole
+post: card man office mark box
+pot: hole luck pie shot
+pound: cake
+power: house plant walk cut
+punch: line bowl
+push: pin
+rabbit: hole
+race: track car horse
+rail: road way
+rain: bow coat drop fall storm forest water
+rat: tail hole
+rattle: snake
+red: head wood
+rest: room stop
+rice: cake paper
+ring: leader side tone master
+river: bed side bank boat
+road: side work block trip map show bed
+rock: star band fall pool
+roll: back over call
+roof: top
+room: mate service
+rope: walk
+rose: bud bush
+round: table trip about
+run: way down off
+sail: boat
+salt: water shaker
+sand: box paper castle storm bag stone man
+saw: dust mill
+school: bus house yard book work bag boy girl room bell
+score: board card
+scrap: book paper yard
+screen: shot play door
+sea: shell side food weed horse gull shore sick bed bird
+second: hand
+seed: bed
+set: back
+sheep: dog skin
+shell: fish
+ship: yard wreck mate
+shoe: lace box string horn
+shop: lift keeper
+short: cake cut hand stop bread fall
+shot: gun
+show: case room down boat time off dog
+sick: bed room
+side: walk kick line show car step ways track door table
+silver: ware fish back
+sink: hole
+skate: board park
+skin: head
+sky: line light scraper dive
+sled: dog
+sleep: walk over
+slide: show
+sling: shot
+snap: shot
+snow: ball man flake storm board fall plow bird drop
+soap: box
+soft: ball ware
+song: bird book
+sound: track proof box board
+space: ship craft suit walk
+spot: light
+spring: board time
+stage: hand door
+stair: case way
+star: fish light dust ship
+steam: boat ship roller
+step: mother father son ladder
+stock: yard pile room pot
+stone: wall
+stop: watch light sign
+store: room front
+storm: cloud
+story: book line
+straw: berry
+stream: line
+street: light car
+sugar: cane cube
+suit: case
+summer: time
+sun: flower light shine set rise burn glasses day room fish
+super: man market star
+sweet: heart corn
+sword: fish
+table: cloth spoon top
+tail: gate spin
+tea: spoon cup pot bag time cake room
+team: work mate
+tear: drop
+text: book
+thunder: storm bolt
+tie: dye pin
+time: table line out piece
+tip: toe
+tool: box bag
+tooth: brush paste pick ache
+top: hat soil dog
+touch: down screen
+tow: truck
+tower: block
+town: house hall ship
+toy: box
+track: suit
+trade: mark
+trap: door
+tree: house top
+truck: stop load bed
+turn: table over
+under: ground wear water world dog cut line hand
+up: stairs town hill side shot
+wall: paper flower
+war: ship head
+wash: room cloth
+watch: dog tower
+water: fall melon proof front mark color bed way hole
+wave: length
+way: side
+wheel: chair
+whirl: pool wind
+white: board wash
+wild: life fire cat card flower
+wind: mill shield fall storm bag
+wood: work pecker land cut
+word: play
+work: shop day out bench place book force
+world: cup
+worm: hole
+wrist: watch
+yard: stick
+year: book

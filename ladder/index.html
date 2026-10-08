@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{name} - a daily word ladder scored like golf</title>
+  <meta name="description" content="A daily word ladder puzzle with a hidden target word, scored like golf.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ===================== PASTE AD CODE HERE (1 of 3) =====================
+       AdSense gives you one <script async src="https://pagead2.googlesyndication.com/...">
+       tag for your site. Paste it here, and in the same place in
+       archive.html, how-to-play.html and privacy.html.
+       ===================================================================== -->
+</head>
+<body class="game-page">
+  <header class="topbar">
+    <a class="brand" href="./">⛳ <span data-game-name></span></a>
+    <div class="topbar-buttons">
+      <button type="button" id="scorecard-button">Scorecard</button>
+      <button type="button" id="stats-button">Stats</button>
+    </div>
+  </header>
+
+  <nav class="mainnav" aria-label="Main">
+    <a href="./" id="nav-daily">Daily</a>
+    <a href="./?mode=practice" id="nav-practice">Practice</a>
+    <a href="archive.html" id="nav-archive">Archive</a>
+    <a href="how-to-play.html">How to Play</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+
+  <main class="game">
+    <div class="holebar">
+      <span id="hole-title">&nbsp;</span>
+      <span id="hole-par"></span>
+      <span id="move-count"></span>
+    </div>
+
+    <div id="hint-row" class="hint-row" hidden></div>
+
+    <div id="board" class="board" aria-label="Your word ladder"></div>
+
+    <div id="message" class="message" role="status" aria-live="polite"></div>
+
+    <div class="actions">
+      <button type="button" id="hint-button" class="secondary">💡 Watch an ad for a hint</button>
+      <button type="button" id="result-button" class="primary" hidden>View result</button>
+      <button type="button" id="new-practice-button" class="secondary" hidden>New puzzle</button>
+    </div>
+
+    <!-- ===================== PASTE AD CODE HERE (2 of 3) =====================
+         Banner under the game board. The space is reserved in css/style.css
+         (.ad-banner: 50px tall on phones, 90px on wide screens) so the page
+         does not jump when the ad loads.
+         Replace the <span> below with your AdSense <ins class="adsbygoogle">
+         ad unit, and keep the surrounding <div>.
+         ===================================================================== -->
+    <div class="ad-slot ad-banner" id="ad-banner">
+      <span class="ad-placeholder">Ad space</span>
+    </div>
+
+    <div id="keyboard" class="keyboard" aria-label="Keyboard"></div>
+  </main>
+
+  <!-- Results screen -->
+  <dialog id="result-dialog" class="dialog">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <h2 id="result-title"></h2>
+    <p id="result-summary" class="result-summary"></p>
+    <p id="result-target" class="result-target" hidden></p>
+    <details id="result-route" class="result-route" hidden>
+      <summary>Show a shortest route</summary>
+      <p id="result-route-text"></p>
+    </details>
+    <div class="dialog-buttons">
+      <button type="button" id="share-button" class="primary">Share</button>
+      <button type="button" id="result-again-button" class="secondary" hidden>New puzzle</button>
+    </div>
+    <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
+    <p id="next-hole" class="next-hole" hidden>Next hole in <strong id="next-hole-countdown"></strong></p>
+
+    <!-- ===================== PASTE AD CODE HERE (3 of 3) =====================
+         Ad on the results screen. Space is reserved for a 300 x 250 unit.
+         Replace the <span> below with your AdSense <ins class="adsbygoogle">
+         ad unit, and keep the surrounding <div>.
+         ===================================================================== -->
+    <div class="ad-slot ad-result" id="ad-result">
+      <span class="ad-placeholder">Ad space</span>
+    </div>
+  </dialog>
+
+  <!-- Stats -->
+  <dialog id="stats-dialog" class="dialog">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <h2>Stats</h2>
+    <div id="stats-numbers" class="stats-numbers"></div>
+    <h3>Results</h3>
+    <div id="stats-results" class="stats-results"></div>
+    <p class="fineprint">Daily holes only. Practice and archive games are not counted.</p>
+  </dialog>
+
+  <!-- Weekly scorecard -->
+  <dialog id="scorecard-dialog" class="dialog">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <h2>Weekly scorecard</h2>
+    <div class="week-nav">
+      <button type="button" id="week-prev" aria-label="Previous week">◀</button>
+      <span id="week-label"></span>
+      <button type="button" id="week-next" aria-label="Next week">▶</button>
+    </div>
+    <div id="scorecard" class="scorecard"></div>
+    <p class="week-total">Week total: <strong id="week-total"></strong></p>
+    <p class="fineprint">E = even par. X = ran out of moves. – = missed day (not counted in the total).</p>
+  </dialog>
+
+  <!-- Placeholder "ad" shown before a hint. See js/ads.js. -->
+  <dialog id="hint-dialog" class="dialog hint-dialog">
+    <h2>Ad placeholder</h2>
+    <p>A short ad will play here.</p>
+    <p class="hint-countdown">Your hint arrives in <strong data-countdown></strong></p>
+    <form method="dialog"><button class="secondary">Cancel</button></form>
+  </dialog>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

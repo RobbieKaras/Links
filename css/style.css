@@ -1,0 +1,454 @@
+/* Mobile-first styles. Wider screens are handled near the bottom. */
+
+:root {
+  --bg: #f6f7f4;
+  --surface: #ffffff;
+  --text: #1c2420;
+  --muted: #66716b;
+  --border: #d5dad6;
+  --brand: #1f6b45;
+  --green: #3a9a5c;
+  --yellow: #c9a227;
+  --gray: #7a827e;
+  --tile-text: #ffffff;
+  --key: #dfe3df;
+  --danger: #b3402e;
+  /* Tile and key sizes follow the screen height, so things are as big as
+     they can be while the board and keyboard still fit on one screen. */
+  --tile: min(clamp(28px, 5.2vh, 52px), 7.6vw);
+  --key-height: clamp(38px, 6.2vh, 60px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131815;
+    --surface: #1d2420;
+    --text: #edf1ee;
+    --muted: #9aa5a0;
+    --border: #364039;
+    --brand: #6fcf97;
+    --green: #3f9d60;
+    --yellow: #b8952a;
+    --gray: #4a524e;
+    --key: #5b655f;
+    --danger: #e0725f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--brand); }
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* ---------- Header ---------- */
+
+.masthead {
+  position: relative;
+  flex-shrink: 0;
+  padding: 4px 12px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.title { margin: 0; font-size: clamp(1.7rem, 4.8vh, 2.8rem); font-weight: 900; line-height: 1.15; }
+.title a { color: var(--text); text-decoration: none; }
+
+.corner-links { position: absolute; top: 6px; right: 10px; }
+
+/* Buttons that look like small text links. */
+.textlink {
+  padding: 4px 2px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.textlink:hover { color: var(--text); text-decoration: underline; }
+.corner-links .textlink { font-size: 0.85rem; text-decoration: underline; }
+
+/* The privacy policy page. */
+.page { max-width: 640px; margin: 0 auto; padding: 16px 16px 48px; }
+.page h1 { margin: 8px 0 12px; font-size: 1.6rem; }
+.page h2 { margin: 24px 0 8px; font-size: 1.15rem; }
+.page li { margin-bottom: 6px; }
+.page-back { margin-top: 32px; }
+
+.footlinks {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px 18px;
+  margin: 4px 0;
+}
+
+.secondary {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.primary {
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--bg);
+  font-weight: 700;
+}
+
+button:disabled { opacity: 0.5; cursor: default; }
+
+/* ---------- Game layout ---------- */
+
+/* The game page fills the screen when there is room. On a short screen
+   nothing is squeezed or cut off: the page scrolls instead. */
+.game-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.game {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+}
+
+.holebar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  margin-top: 2px;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.holebar a { color: var(--brand); }
+.holebar a[hidden] { display: none; }
+
+.holebar #hole-title { font-weight: 800; color: var(--text); }
+.holebar #hole-par { font-weight: 700; color: var(--brand); }
+
+.board {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 4px 0 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Every row is the same width, so the first letters line up in a column. */
+.chain-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+  width: calc(var(--tile) * 10 + 27px + 2.4em);
+  max-width: 100%;
+  padding: 2px 6px;
+  margin-top: 2px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+/* The "link" joining each word to the one above it. */
+.chain-row + .chain-row::before {
+  content: "";
+  position: absolute;
+  left: calc(6px + var(--tile) / 2 - 2px);
+  top: -5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.chain-row.open { cursor: pointer; }
+.chain-row.selected { border-color: var(--brand); background: var(--surface); }
+
+.tile {
+  width: var(--tile);
+  height: var(--tile);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  background: var(--surface);
+  font-size: calc(var(--tile) * 0.58);
+  font-weight: 800;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.tile.shown { border-color: var(--text); background: var(--text); color: var(--bg); }
+.tile.solved, .tile.given, .tile.missed { border-color: transparent; color: var(--tile-text); }
+.tile.solved { background: var(--green); }
+.tile.given { background: var(--yellow); }
+.tile.missed { background: var(--gray); }
+.tile.revealed { border-color: var(--muted); }
+.tile.typed { border-color: var(--brand); color: var(--brand); }
+.tile.cursor { border-style: dashed; border-color: var(--brand); }
+.tile.more { border-color: transparent; background: none; color: var(--muted); }
+
+.miss-count {
+  margin-left: auto;
+  padding-left: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--danger);
+  white-space: nowrap;
+}
+
+.chain-row.shake { animation: shake 0.35s; }
+
+@keyframes shake {
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chain-row.shake { animation: none; }
+}
+
+/* One line shared by the "Tried" list and messages. A message covers the
+   list while it is showing. The height is fixed so the page does not jump. */
+.status {
+  display: grid;
+  flex-shrink: 0;
+  width: 100%;
+  height: 1.4em;
+  align-items: center;
+  text-align: center;
+}
+
+.status > * { grid-area: 1 / 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tried { font-size: 0.9rem; color: var(--muted); }
+.message { font-weight: 700; color: var(--danger); }
+.status:has(.message:not(:empty)) .tried { visibility: hidden; }
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  margin-bottom: 4px;
+}
+
+/* ---------- Ad placeholders ---------- */
+
+.ad-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ad-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Banner at the bottom of the page. The height is reserved up front. */
+.ad-banner {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+}
+
+/* Results screen ad: room for a 300 x 250 unit. */
+.ad-result { width: 300px; max-width: 100%; height: 250px; margin-top: 16px; }
+
+/* ---------- Keyboard ---------- */
+
+.keyboard { flex-shrink: 0; width: 100%; display: flex; flex-direction: column; gap: 6px; }
+
+.key-row { display: flex; justify-content: center; gap: 5px; }
+
+.key {
+  flex: 1;
+  max-width: 44px;
+  height: var(--key-height);
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: var(--key);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.key.wide { flex: 1.6; max-width: 70px; font-size: 0.75rem; }
+.key.green, .key.yellow, .key.gray { color: var(--tile-text); }
+.key.green { background: var(--green); }
+.key.yellow { background: var(--yellow); }
+.key.gray { background: var(--gray); opacity: 0.75; }
+
+/* ---------- Dialogs ---------- */
+
+.dialog {
+  width: min(92vw, 400px);
+  max-height: 92vh;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: center;
+}
+
+.dialog::backdrop { background: rgba(0, 0, 0, 0.55); }
+.dialog h2 { margin: 0 32px 8px; }
+.dialog h3 { margin: 16px 0 8px; font-size: 1rem; }
+.dialog p { margin: 6px 0; }
+
+.dialog .close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--muted);
+}
+
+.dialog-buttons { display: flex; justify-content: center; gap: 8px; margin: 14px 0 4px; }
+.result-summary { color: var(--muted); }
+.result-chain { font-size: 0.9rem; font-weight: 700; }
+.share-status { min-height: 1.5em; font-size: 0.9rem; color: var(--brand); }
+.next-hole { color: var(--muted); }
+.next-hole strong { color: var(--text); font-variant-numeric: tabular-nums; }
+.fineprint { font-size: 0.8rem; color: var(--muted); }
+.hint-countdown strong { font-size: 1.4rem; }
+
+.stats-numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.stats-numbers strong { display: block; font-size: 1.6rem; line-height: 1.2; }
+.stats-numbers span { font-size: 0.75rem; color: var(--muted); }
+
+.stats-results { display: grid; gap: 4px; text-align: left; font-size: 0.85rem; }
+.result-line { display: grid; grid-template-columns: 9.5em 1fr 2em; align-items: center; gap: 6px; }
+.result-count { text-align: right; font-weight: 700; }
+.bar { height: 12px; border-radius: 3px; background: var(--bg); overflow: hidden; }
+.bar span { display: block; height: 100%; background: var(--green); }
+
+.week-nav { display: flex; align-items: center; justify-content: space-between; margin: 8px 0; font-weight: 700; }
+.week-nav button { width: 40px; height: 36px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+
+.scorecard { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.day-name { font-size: 0.7rem; color: var(--muted); }
+.day-score { min-height: 1.5em; font-size: 1.1rem; font-weight: 800; }
+.day-hole { min-height: 1.4em; font-size: 0.65rem; color: var(--muted); }
+.day.under .day-score { color: var(--green); }
+.day.over .day-score, .day.lost .day-score { color: var(--danger); }
+.day.missed .day-score, .day.today .day-score { color: var(--muted); }
+.day.none { opacity: 0.45; }
+.week-total { margin-top: 12px; font-size: 1.1rem; }
+
+/* ---------- How to play and archive pop-ups ---------- */
+
+.text-dialog { width: min(94vw, 560px); text-align: left; font-size: 0.95rem; }
+.text-dialog h2 { text-align: center; }
+.text-dialog ul { padding-left: 1.2em; }
+.text-dialog li { margin-bottom: 6px; }
+
+.example { display: inline-flex; flex-direction: column; margin: 4px 0 10px; --tile: 28px; }
+.example .chain-row { width: auto; }
+
+.score-table { width: 100%; border-collapse: collapse; }
+.score-table th, .score-table td { padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: left; }
+
+.archive-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; text-align: left; }
+
+.archive-list a {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.archive-list .hole-name { font-weight: 800; }
+.archive-list .hole-meta { font-size: 0.8rem; color: var(--muted); }
+.archive-list .hole-result { margin-top: 4px; font-size: 0.85rem; font-weight: 700; color: var(--brand); }
+.archive-list .hole-result.unplayed { font-weight: 400; color: var(--muted); }
+
+
+@media (max-width: 380px) {
+  .footlinks { gap: 2px 12px; }
+  .textlink { font-size: 0.9rem; }
+}
+
+/* ---------- Wider screens ---------- */
+
+@media (min-width: 760px) {
+  .ad-banner { max-width: 728px; height: 90px; }
+  .game { max-width: 760px; }
+  .keyboard { max-width: 660px; gap: 8px; }
+  .key-row { gap: 7px; }
+  .key { max-width: 58px; font-size: 1.2rem; }
+  .key.wide { max-width: 92px; font-size: 0.9rem; }
+  .textlink { font-size: 1.15rem; }
+  .footlinks { gap: 2px 30px; }
+  .corner-links .textlink { font-size: 0.9rem; }
+  .secondary, .primary { font-size: 1.05rem; }
+}

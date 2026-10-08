@@ -1,0 +1,5 @@
+# Offensive words. Removed from BOTH lists: they can never be an answer
+# and are not accepted as a move. One or more words per line.
+fuck shit shat cunt twat slut piss tits clit jism jizz cums wank
+porn rape nazi homo dyke fags poof poon spaz tard hebe
+jews kike yids spic wops dago gook coon mick nigs japs gyps wogs abos paki

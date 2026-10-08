@@ -1,0 +1,22 @@
+# Words that are fine as a MOVE but should never be a start or target word:
+# names, abbreviations, foreign or archaic words, and crude or grim words.
+# Edit freely, then run `npm run words` and `npm run puzzles`.
+
+# names and places
+john mike tony matt alan jane anna rick marc carl brad chad josh ruth jean
+beth jill jake kirk bach khan beck maya vera lowe carr kane hank noel mack
+alma holt berg tate kris otto shaw hart cole dale glen lang hong fuji lima
+tyne ritz mars troy kent dell ford rand soma yang pooh luna hale tiff eddy
+
+# abbreviations and tech shorthand
+pics comp spec stat exec prof prod prog regs mods libs roms macs sims cams
+bios hist char sept midi mart anti para mono poly meta aero
+
+# foreign, archaic or obscure
+thou thee hath unto thru lite wont cant sans lieu noir faux casa deco alfa
+acta ciao haha heck eyed ware keno gage duff cote gran coca ness fiat alba
+yuan scat olds outs lows vale lien fave dong tang fats coke
+
+# crude or grim
+nude sexy anal oral cock dick boob butt crap damn hell suck orgy lust bras
+gays aids

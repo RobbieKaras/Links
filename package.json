@@ -1,0 +1,13 @@
+{
+  "name": "links",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --test",
+    "pairs": "node scripts/build-pairs.js",
+    "puzzles": "node scripts/generate-puzzles.js",
+    "ladder:words": "node ladder/scripts/build-words.js",
+    "ladder:puzzles": "node ladder/scripts/generate-puzzles.js"
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archive - {name}</title>
+  <meta name="description" content="Play past holes.">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- PASTE AD CODE HERE: the site-wide AdSense <script> tag (same one as index.html). -->
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">⛳ <span data-game-name></span></a>
+  </header>
+  <nav class="mainnav" aria-label="Main">
+    <a href="./">Daily</a>
+    <a href="./?mode=practice">Practice</a>
+    <a href="archive.html" aria-current="page">Archive</a>
+    <a href="how-to-play.html">How to Play</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+
+  <main class="page">
+    <h1>Archive</h1>
+    <p>Catch up on holes you missed. Archive games are saved here, but they do not count toward your stats, streak or weekly scorecard.</p>
+    <p id="archive-empty" hidden>No past holes yet. Come back tomorrow!</p>
+    <ul id="archive-list" class="archive-list"></ul>
+  </main>
+
+  <script type="module" src="js/archive.js"></script>
+</body>
+</html>
